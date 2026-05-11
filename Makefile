@@ -6,7 +6,7 @@
 #    By: pride-ol <pride-ol@student.42.fr>            +#+                      #
 #                                                    +#+                       #
 #    Created: 2026/05/04 10:32:09 by pride-ol      #+#    #+#                  #
-#    Updated: 2026/05/04 10:47:06 by pride-ol      ########   odam.nl          #
+#    Updated: 2026/05/10 22:52:15 by pride-ol      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,10 @@ SRCS = ft_printf.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
-$(NAME): $(LIBFT) $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o %(NAME)
+$(NAME): $(OBJS)
+	make -C $(LIBFT_DIR)
+	cp $(LIBFT) $(NAME)
+	ar rcs $(NAME) $(OBJS)
 $(LIBFT):
 	make -C $(LIBFT_DIR)
 clean:
