@@ -74,7 +74,7 @@ Justification: Since the number and types of arguments passed to printf are unkn
 ## Resources
 Man printf(3) - The official Linux programmer's manual.
 
-Variadic Functions in C - Official documentation on stdarg.h.
+Variadic Functions in C - [geeks for geeks](https://www.geeksforgeeks.org/c/variadic-functions-in-c/)
 
 Use of AI
 Conceptual Learning: Explaining the mechanics of va_list, va_arg, and the memory promotion of types (e.g., why char is promoted to int in variadic functions).
