@@ -5,34 +5,26 @@
 #                                                      +:+                     #
 #    By: pride-ol <pride-ol@student.42.fr>            +#+                      #
 #                                                    +#+                       #
-#    Created: 2026/05/04 10:32:09 by pride-ol      #+#    #+#                  #
-#    Updated: 2026/05/10 22:52:15 by pride-ol      ########   odam.nl          #
+#    Created: 2026/05/11 11:39:39 by pride-ol      #+#    #+#                  #
+#    Updated: 2026/05/11 16:52:22 by pride-ol      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME: libftprintf.a
+NAME = libftprintf.a
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -I. -Ilibft
+CFLAGS = -Wall -Wextra -Werror
 
-# libft variables
-LIBFT_DIR = ./libft
-LIBFT = $(LIBFT_DIR)/libft.a
-
-SRCS = ft_printf.c
+SRCS = ft_printf.c utils.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
-$(NAME): $(OBJS)
-	make -C $(LIBFT_DIR)
-	cp $(LIBFT) $(NAME)
+$(NAME): $(OBJS)	
 	ar rcs $(NAME) $(OBJS)
-$(LIBFT):
-	make -C $(LIBFT_DIR)
+%.o: %.cc
+	$(CC) $(CFLAGS) -c $< -o $@
 clean:
-	rm -f $(OBJS)
-	make -C $(LIBFT_DIR) clean
+	rm -f $(OBJS)	
 fclean: clean
-	rm -f $(NAME)
-	make -C $(LIBFT_DIR) fclean
+	rm -f $(NAME)	
 re: fclean all
 .PHONY: all re clean fclean
