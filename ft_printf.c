@@ -6,7 +6,7 @@
 /*   By: pride-ol <pride-ol@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2026/05/11 22:15:38 by pride-ol      #+#    #+#                 */
-/*   Updated: 2026/05/11 22:41:11 by pride-ol      ########   odam.nl         */
+/*   Updated: 2026/05/12 22:44:11 by pride-ol      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	ft_printf(const char *format, ...)
 		{
 			length += check_format(args, format[i + 1]);
 			i++;
-		}			
+		}
 		else if (format[i] != '%')
 			length += ft_putchar(format[i]);
 		i++;

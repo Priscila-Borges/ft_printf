@@ -6,7 +6,7 @@
 #    By: pride-ol <pride-ol@student.42.fr>            +#+                      #
 #                                                    +#+                       #
 #    Created: 2026/05/11 11:39:39 by pride-ol      #+#    #+#                  #
-#    Updated: 2026/05/11 16:52:22 by pride-ol      ########   odam.nl          #
+#    Updated: 2026/05/12 22:13:05 by pride-ol      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,13 @@ SRCS = ft_printf.c utils.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
-$(NAME): $(OBJS)	
+$(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
-%.o: %.cc
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 clean:
-	rm -f $(OBJS)	
+	rm -f $(OBJS)
 fclean: clean
-	rm -f $(NAME)	
+	rm -f $(NAME)
 re: fclean all
 .PHONY: all re clean fclean
